@@ -12,7 +12,12 @@
         "Abschnitt.ts",
         "MovedObject.ts",
         "Geruest.ts",
-        "HoheMauer.ts"
+        "HoheMauer.ts",
+        "NiedrigeMauer.ts",
+        "Lastwagen.ts",
+        "Abschnitte.ts",
+        "images.g.jres",
+        "images.g.ts"
     ],
     "testFiles": [
         "test.ts"

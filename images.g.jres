@@ -1,0 +1,27 @@
+{
+    "image1": {
+        "data": "hwQQABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADu7u7u7u7u7sz8VVW7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1+7u7u7u7u7u8z8/1/u7u7u7u7u7sz8VVUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Lastwagen"
+    },
+    "image2": {
+        "data": "hwQQABAAAADdHd0d3R3dHRER3R0REd0d3R3dHd0d3R3dHd0d3R3dHd0d3R3dHd0d3R0REd0dERHdHd0d3R3dHd0d3R3dHd0d3R3dHd0d3R0REd0dERHdHd0d3R3dHd0d3R3dHd0d3R3dHd0d3R3dHd0dERHdHRER3R3dHd0d3R3dHd0d3R3dHQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "HoheMauer"
+    },
+    "image3": {
+        "data": "hwQQAAgAAADdHd0dERHdHd0d3R3dHd0d3R3dHd0dERHdHd0d3R3dHd0d3R0REd0d3R3dHd0d3R3dHd0d3R0REd0d3R3dHd0d",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "NiedrigeMauer"
+    },
+    "image4": {
+        "data": "hwQQABAAAAAREREREREREREAEAEAAAAAAQEBAQAAAAABEAABAAAAAAEBAQEAAAAAEQAQAQAAAAABAQEBAAAAAAEQAAEAAAAAAREAAQAAAAARAAEBAAAAAAEBEAEAAAAAARABAQAAAAABEAEBAAAAAAEBEAEAAAAAEQABAQAAAAAREREREREREQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Geruest"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}

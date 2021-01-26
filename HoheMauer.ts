@@ -9,6 +9,7 @@ class HoheMauer extends MovedObject
 
     public initializeSprite()
     {
+        console.log("initializeSprite in HoheMauer")
         this.sprite = sprites.create(assets.image`HoheMauer`,SpriteKind.HoheMauer)
         this.build()
     }

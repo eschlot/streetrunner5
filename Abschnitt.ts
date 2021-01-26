@@ -19,13 +19,16 @@ class Abschnitt
         for (i=0;i<this.objects.length;i++)
         {
             let o=this.objects[i];
-            if (o.getSprite().top<scene.screenHeight())
+            if (o.getSprite()!=null)
             {
-                returnValue= true;
-            }
-            else
-            {
-                o.destroySprite()
+                if (o.getSprite().top<scene.screenHeight())
+                {
+                    returnValue= true;
+                }
+                else
+                {
+                    o.destroySprite()
+                }
             }
         }
         return returnValue;

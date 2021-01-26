@@ -9,6 +9,7 @@ class Geruest extends MovedObject
 
     initializeSprite()
     {
+        console.log("initializeSprite in Geruest")
         this.sprite =  sprites.create(assets.image`Geruest`,SpriteKind.Geruest)
         this.build()
     }

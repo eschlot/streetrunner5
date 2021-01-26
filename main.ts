@@ -49,13 +49,9 @@ let abschnitte : Abschnitte = new Abschnitte();
 
 game.onUpdateInterval(200, function () {
         let aktAbschnitt = abschnitte.getActiveAbschnitt()
-        if (aktAbschnitt.isRunning())
+        if (!aktAbschnitt.isRunning())
         {
-
-        }
-        else
-        {
-            let neuerAbschnitt = Math.floor(randint(0,abschnitte.numAbschnitte()))
+            let neuerAbschnitt = Math.floor(randint(0,abschnitte.numAbschnitte()-1))
             console.logValue("neuerAbschnitt", neuerAbschnitt)
             abschnitte.setActiveAbschnitt(neuerAbschnitt)
         } 

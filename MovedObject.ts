@@ -42,10 +42,9 @@ class  MovedObject {
         this.sprite=null
     }
 
-    public initializeSprite():void
+    initializeSprite()
     {
-
+        console.log("initializeSprite in MovedObject")
     }
-
 }
 

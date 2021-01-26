@@ -2,7 +2,7 @@ class Lastwagen extends MovedObject
 {
 
     constructor(spur: number,startpunkt:number) { 
-        super(40, spur, Begehbarkeit.MASSIV,startpunkt)
+        super(120, spur, Begehbarkeit.MASSIV,startpunkt)
         
      }
 

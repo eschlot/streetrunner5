@@ -2,7 +2,7 @@ class HoheMauer extends MovedObject
 {
 
     constructor(spur: number,startpunkt:number) { 
-        super(20, spur, Begehbarkeit.MASSIV,startpunkt)
+        super(60, spur, Begehbarkeit.MASSIV,startpunkt)
 
      }
 

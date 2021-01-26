@@ -1,7 +1,7 @@
 class NiedrigeMauer extends MovedObject
 {
     constructor(spur: number,startpunkt:number) { 
-        super(20, spur, Begehbarkeit.UEBERHUEPFBAR,startpunkt)
+        super(60, spur, Begehbarkeit.UEBERHUEPFBAR,startpunkt)
      }
 
     public initializeSprite()

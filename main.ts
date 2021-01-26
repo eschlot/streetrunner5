@@ -25,7 +25,6 @@ enum Color {
     Black // 15 = RGB(0, 0, 0)
 }
 
-
 scene.setBackgroundColor(Color.Bone)
 
 let abschnitte : Abschnitte = new Abschnitte();
@@ -41,23 +40,31 @@ let abschnitte : Abschnitte = new Abschnitte();
     let abschnitt : Abschnitt = new Abschnitt()
     abschnitt.add(new HoheMauer(2,50))
     abschnitt.add(new Geruest(0,50))
-    abschnitt.add(new NiedrigeMauer(0,400))
+    abschnitt.add(new NiedrigeMauer(0,250))
     abschnitt.add(new Lastwagen(1,300))
     abschnitte.add(abschnitt)
 }
-
+{
+    let abschnitt : Abschnitt = new Abschnitt()
+    abschnitt.add(new HoheMauer(1,300))
+    abschnitt.add(new Geruest(0,50))
+    abschnitt.add(new NiedrigeMauer(0,300))
+    abschnitt.add(new Lastwagen(1,300))
+    abschnitt.add(new Lastwagen(2,300))
+    abschnitte.add(abschnitt)
+}
 
 game.onUpdateInterval(200, function () {
         let aktAbschnitt = abschnitte.getActiveAbschnitt()
         if (!aktAbschnitt.isRunning())
         {
-            let neuerAbschnitt = Math.floor(randint(0,abschnitte.numAbschnitte()-1))
+            let neuerAbschnitt = Math.floor(randint(0,abschnitte.numAbschnitte()-.5))
             console.logValue("neuerAbschnitt", neuerAbschnitt)
             abschnitte.setActiveAbschnitt(neuerAbschnitt)
         } 
 })
-
 abschnitte.setActiveAbschnitt(0);
+
 
 
 

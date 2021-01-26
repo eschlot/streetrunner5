@@ -2,7 +2,7 @@ class Geruest extends MovedObject
 {
 
     constructor(spur: number,startpunkt:number) { 
-        super(20, spur, Begehbarkeit.UNTERTUNNELBAR,startpunkt)
+        super(60, spur, Begehbarkeit.UNTERTUNNELBAR,startpunkt)
         
      }
 

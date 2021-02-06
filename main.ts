@@ -25,6 +25,26 @@ enum Color {
     Black // 15 = RGB(0, 0, 0)
 }
 
+
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (spur>0)
+    {
+        spur=spur-1
+        direction=-1
+        mySprite.vx = -200
+    }
+})
+
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (spur<2)
+    {
+        spur=spur+1
+        direction=1
+        mySprite.vx = 200
+    }
+})
+
+
 scene.setBackgroundColor(Color.Bone)
 
 let abschnitte : Abschnitte = new Abschnitte();
@@ -53,6 +73,139 @@ let abschnitte : Abschnitte = new Abschnitte();
     abschnitt.add(new Lastwagen(2,300))
     abschnitte.add(abschnitt)
 }
+
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . 3 3 3 3 3 3 . . . . . . . 
+    . . 3 3 . . . . . 3 3 3 3 . . . 
+    . . 3 . . . . . . . . . 3 . . . 
+    . . 3 . . . . . . . . . 3 3 . . 
+    . . 3 . . . . . . . . . . 3 . . 
+    . . 3 . . . . . . . . . . 3 . . 
+    . . 3 . . . . . . . . . . 3 3 . 
+    . . 3 . . . . . . . . . . 3 3 . 
+    . 3 . . . . . . . . . . . 3 3 . 
+    . 3 . . . . . . . . . . . . 3 . 
+    . 3 . . . . . . . . . . . . 3 . 
+    . 3 . . . . . . . . . . . . . 3 
+    . 3 . . . . . . . . . . . . . 3 
+    . . . . . . . . . . . . . . . 3 
+    `, SpriteKind.Player)
+
+let spur = 1
+let direction =0
+
+mySprite.setPosition(40 + 40 * spur, 96)
+animation.runImageAnimation(
+mySprite,
+[img`
+    . . . . . . f f f f . . . . . . 
+    . . . . f f e e e e f f . . . . 
+    . . . f e e e f f e e e f . . . 
+    . . f f f f f 2 2 f f f f f . . 
+    . . f f e 2 e 2 2 e 2 e f f . . 
+    . . f e 2 f 2 f f 2 f 2 e f . . 
+    . . f f f 2 2 e e 2 2 f f f . . 
+    . f f e f 2 f e e f 2 f e f f . 
+    . f e e f f e e e e f e e e f . 
+    . . f e e e e e e e e e e f . . 
+    . . . f e e e e e e e e f . . . 
+    . . e 4 f f f f f f f f 4 e . . 
+    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+    . . 4 4 f 4 4 4 4 4 4 f 4 4 . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f f . . f f . . . . . 
+    `,img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . f f f f . . . . . . 
+    . . . . f f e e e e f f . . . . 
+    . . . f e e e f f e e e f . . . 
+    . . . f f f f 2 2 f f f f . . . 
+    . . f f e 2 e 2 2 e 2 e f f . . 
+    . . f e 2 f 2 f f f 2 f e f . . 
+    . . f f f 2 f e e 2 2 f f f . . 
+    . . f e 2 f f e e 2 f e e f . . 
+    . f f e f f e e e f e e e f f . 
+    . f f e e e e e e e e e e f f . 
+    . . . f e e e e e e e e f . . . 
+    . . . e f f f f f f f f 4 e . . 
+    . . . 4 f 2 2 2 2 2 e d d 4 . . 
+    . . . e f f f f f f e e 4 . . . 
+    . . . . f f f . . . . . . . . . 
+    `,img`
+    . . . . . . f f f f . . . . . . 
+    . . . . f f e e e e f f . . . . 
+    . . . f e e e f f e e e f . . . 
+    . . f f f f f 2 2 f f f f f . . 
+    . . f f e 2 e 2 2 e 2 e f f . . 
+    . . f e 2 f 2 f f 2 f 2 e f . . 
+    . . f f f 2 2 e e 2 2 f f f . . 
+    . f f e f 2 f e e f 2 f e f f . 
+    . f e e f f e e e e f e e e f . 
+    . . f e e e e e e e e e e f . . 
+    . . . f e e e e e e e e f . . . 
+    . . e 4 f f f f f f f f 4 e . . 
+    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+    . . 4 4 f 4 4 4 4 4 4 f 4 4 . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f f . . f f . . . . . 
+    `,img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . f f f f . . . . . . 
+    . . . . f f e e e e f f . . . . 
+    . . . f e e e f f e e e f . . . 
+    . . . f f f f 2 2 f f f f . . . 
+    . . f f e 2 e 2 2 e 2 e f f . . 
+    . . f e f 2 f f f 2 f 2 e f . . 
+    . . f f f 2 2 e e f 2 f f f . . 
+    . . f e e f 2 e e f f 2 e f . . 
+    . f f e e e f e e e f f e f f . 
+    . f f e e e e e e e e e e f f . 
+    . . . f e e e e e e e e f . . . 
+    . . e 4 f f f f f f f f e . . . 
+    . . 4 d d e 2 2 2 2 2 f 4 . . . 
+    . . . 4 e e f f f f f f e . . . 
+    . . . . . . . . . f f f . . . . 
+    `],
+100,
+true
+)
+
+game.onUpdate(function () {
+    if (direction == 1)
+    {
+        if (40+spur*40 < mySprite.x) {
+            mySprite.vx = 0
+            direction = 0
+        }    
+    }
+    if (direction == -1)
+    {
+        if (40+spur*40 > mySprite.x) {
+            mySprite.vx = 0
+            direction = 0
+        }
+    }
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Geruest, function(sprite: Sprite, otherSprite: Sprite) {
+    
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Lastwagen, function(sprite: Sprite, otherSprite: Sprite) {
+    game.over()
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NiedrigeMauer, function(sprite: Sprite, otherSprite: Sprite) {
+    
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.HoheMauer, function(sprite: Sprite, otherSprite: Sprite) {
+    
+    game.over()
+})
 
 game.onUpdateInterval(200, function () {
         let aktAbschnitt = abschnitte.getActiveAbschnitt()

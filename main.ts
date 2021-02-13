@@ -263,29 +263,42 @@ scene.setBackgroundColor(Color.Bone)
 let abschnitte : Abschnitte = new Abschnitte();
 {
     let abschnitt : Abschnitt = new Abschnitt()
-    abschnitt.add(new HoheMauer(1,50))
-    abschnitt.add(new Geruest(0,50))
-    abschnitt.add(new NiedrigeMauer(2,100))
-    abschnitt.add(new Lastwagen(0,300))
+    abschnitt.add(new HoheMauer(1,0))
+    abschnitt.add(new Geruest(0,0))
+    abschnitt.add(new NiedrigeMauer(2,50))
+    abschnitt.add(new Geruest(2,150))
+    abschnitt.add(new Lastwagen(0,250))
     abschnitte.add(abschnitt)
 }
 {
     let abschnitt : Abschnitt = new Abschnitt()
-    abschnitt.add(new HoheMauer(2,50))
-    abschnitt.add(new Geruest(0,50))
+    abschnitt.add(new HoheMauer(2,0))
+    abschnitt.add(new Geruest(0,0))
+    abschnitt.add(new NiedrigeMauer(0,200))
+    abschnitt.add(new Lastwagen(1,250))
+    abschnitte.add(abschnitt)
+}
+{
+    let abschnitt : Abschnitt = new Abschnitt()
+    abschnitt.add(new HoheMauer(1,250))
+    abschnitt.add(new Geruest(0,0))
     abschnitt.add(new NiedrigeMauer(0,250))
-    abschnitt.add(new Lastwagen(1,300))
+    abschnitt.add(new Lastwagen(1,250))
+    abschnitt.add(new Lastwagen(2,250))
     abschnitte.add(abschnitt)
 }
 {
     let abschnitt : Abschnitt = new Abschnitt()
     abschnitt.add(new HoheMauer(1,300))
-    abschnitt.add(new Geruest(0,50))
-    abschnitt.add(new NiedrigeMauer(0,300))
+    abschnitt.add(new Geruest(0,0))
+    abschnitt.add(new NiedrigeMauer(0,150))
     abschnitt.add(new Lastwagen(1,300))
     abschnitt.add(new Lastwagen(2,300))
     abschnitte.add(abschnitt)
 }
+
+
+
 
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
@@ -307,9 +320,12 @@ mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . 3 
     `, SpriteKind.Player)
 
-let spur = 1
-let direction = 0
-let bodyPosition = 0
+let spur = 1 // 0 = left, 1 = middle , 2 = right
+let direction = 0 
+let bodyPosition = 0  // 0 normal running, 1 = jumping, -1 = crawling
+
+game.splash("Street Runner"," Be awesome!")
+
 
 mySprite.setPosition(40 + 40 * spur, 96)
 animation.runImageAnimation(
@@ -431,13 +447,7 @@ game.onUpdateInterval(200, function () {
         if (!aktAbschnitt.isRunning())
         {
             let neuerAbschnitt = Math.floor(randint(0,abschnitte.numAbschnitte()-.5))
-            console.logValue("neuerAbschnitt", neuerAbschnitt)
             abschnitte.setActiveAbschnitt(neuerAbschnitt)
         } 
 })
 abschnitte.setActiveAbschnitt(0);
-
-
-
-
-

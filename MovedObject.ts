@@ -40,6 +40,7 @@ class  MovedObject {
     {
         this.sprite.destroy()
         this.sprite=null
+        info.player1.changeScoreBy(1)
     }
 
     initializeSprite()
